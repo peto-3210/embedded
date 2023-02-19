@@ -1,0 +1,3 @@
+/home/deb_win1/pico/pr01/build/pioasm/CMakeFiles/rebuild_cache.dir
+/home/deb_win1/pico/pr01/build/pioasm/CMakeFiles/edit_cache.dir
+/home/deb_win1/pico/pr01/build/pioasm/CMakeFiles/pioasm.dir
