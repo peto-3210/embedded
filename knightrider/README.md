@@ -1,0 +1,2 @@
+Code creates a sequence of lights (snake), in knightrider theme. Sequence consists of 8 LED connected to Raspberry Pi Pico W according to schematic (circuit.png). The speed of snake can be controlled by applying binary code to the 
+pin 3-5, where 3 is the least significant and 5 the most significant bit. The bigger number is applied, the faster snake is. 
