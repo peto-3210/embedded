@@ -25,8 +25,10 @@ int main(int argc, char** argv){
     if (argc < 2 || !strlen(argv[1])){
         seed = 10;
     }
+    else{
+        seed = strtol(argv[1], NULL, 10) % ALPHABET_LEN;
+    }
 
-    seed = strtol(argv[1], NULL, 10) % ALPHABET_LEN;
     //Handles negative seed
     if (seed < 0){
         seed += ALPHABET_LEN;
@@ -41,7 +43,7 @@ int main(int argc, char** argv){
         return 1;
     }
 
-    for (; (buffer[inp_len] = getchar()) != EOF && buffer[inp_len] != '0'; ++inp_len){
+    for (; (buffer[inp_len] = getchar()) != EOF; ++inp_len){
         if (inp_len == buffer_capacity - 1){
             if ((buffer = realloc_array(buffer, &buffer_capacity, sizeof(char)))){
                 fprintf(stderr, "Reallocation error on buffer size %d bytes", inp_len);
@@ -51,7 +53,7 @@ int main(int argc, char** argv){
     }
 
     apply_cipher(seed, buffer, inp_len);
-    printf(buffer);
+    fwrite(buffer, sizeof(char), inp_len, stdout);
     free(buffer);
     return 0;
 
